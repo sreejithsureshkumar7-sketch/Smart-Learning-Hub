@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress | Smart Learning Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">🎓 Smart Learning Hub</div>
+  <nav id="navLinks">
+    <a href="index.html">Home</a><a href="learning.html">Learning</a><a href="quiz.html">Quiz</a><a href="notes.html">Notes</a><a href="progress.html">Progress</a><a href="profile.html">Profile</a>
+  </nav>
+  <button class="theme-btn" onclick="toggleTheme()">🌙</button><button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<main class="container">
+  <h1>Your Progress</h1>
+  <div class="dashboard">
+    <div class="stat"><h2 id="lessonCount">0</h2><p>Lessons Completed</p></div>
+    <div class="stat"><h2 id="bestScore">0%</h2><p>Best Quiz Score</p></div>
+    <div class="stat"><h2 id="streak">0</h2><p>Learning Streak</p></div>
+  </div>
+  <h2>Overall Progress</h2>
+  <div class="progress-line big"><span id="overallBar"></span></div>
+  <h2>Completed Lessons</h2>
+  <ul id="lessonList"></ul>
+  <h2>Leaderboard</h2>
+  <div id="leaderboard"></div>
+  <button class="btn" onclick="downloadCertificate()">Download Certificate</button>
+</main>
+<script src="js/app.js"></script>
+<script src="js/progress.js"></script>
+</body>
+</html>

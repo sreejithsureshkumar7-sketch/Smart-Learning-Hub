@@ -1,0 +1,9 @@
+const quotes=["Small steps every day create big results.","Learning never stops.","Practice today, success tomorrow.","One lesson a day keeps confusion away."];
+document.addEventListener('DOMContentLoaded',()=>{if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark');const q=document.getElementById('quote');if(q)q.textContent=quotes[Math.floor(Math.random()*quotes.length)];loadProfile();});
+function toggleTheme(){document.body.classList.toggle('dark');localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light');}
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('show');}
+function completeLesson(title){let lessons=JSON.parse(localStorage.getItem('lessons')||'[]');if(!lessons.includes(title)){lessons.push(title);localStorage.setItem('lessons',JSON.stringify(lessons));updateStreak();alert(title+' completed!');}else alert('Already completed!');}
+function filterCourses(){const value=document.getElementById('searchCourse').value.toLowerCase();document.querySelectorAll('.course').forEach(c=>{c.style.display=c.dataset.title.toLowerCase().includes(value)?'block':'none';});}
+function updateStreak(){const today=new Date().toDateString();let streak=Number(localStorage.getItem('streak')||0);if(localStorage.getItem('lastActive')!==today){streak++;localStorage.setItem('streak',streak);localStorage.setItem('lastActive',today);}}
+function saveProfile(){const profile={name:document.getElementById('name').value||'Learner',age:document.getElementById('age').value||'-',level:document.getElementById('level').value};localStorage.setItem('profile',JSON.stringify(profile));loadProfile();alert('Profile saved!');}
+function loadProfile(){const view=document.getElementById('profileView');if(!view)return;const p=JSON.parse(localStorage.getItem('profile')||'{}');if(p.name){view.innerHTML=`<div class="card"><h2>👤 ${p.name}</h2><p>Age: ${p.age}</p><p>Level: ${p.level}</p></div>`;}}

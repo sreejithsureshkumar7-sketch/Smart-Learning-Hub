@@ -1,0 +1,4 @@
+function addNote(){const input=document.getElementById('noteInput');if(!input.value.trim()){alert('Type something first');return;}let notes=JSON.parse(localStorage.getItem('notes')||'[]');notes.push({text:input.value,date:new Date().toLocaleString()});localStorage.setItem('notes',JSON.stringify(notes));input.value='';showNotes();}
+function deleteNote(index){let notes=JSON.parse(localStorage.getItem('notes')||'[]');notes.splice(index,1);localStorage.setItem('notes',JSON.stringify(notes));showNotes();}
+function showNotes(){const list=document.getElementById('notesList');const notes=JSON.parse(localStorage.getItem('notes')||'[]');list.innerHTML=notes.map((n,i)=>`<div class="note-item"><div><p>${n.text}</p><small>${n.date}</small></div><button onclick="deleteNote(${i})">Delete</button></div>`).join('')||'<p>No notes yet.</p>';}
+document.addEventListener('DOMContentLoaded',showNotes);

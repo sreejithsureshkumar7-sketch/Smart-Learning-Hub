@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes | Smart Learning Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">🎓 Smart Learning Hub</div>
+  <nav id="navLinks">
+    <a href="index.html">Home</a><a href="learning.html">Learning</a><a href="quiz.html">Quiz</a><a href="notes.html">Notes</a><a href="progress.html">Progress</a><a href="profile.html">Profile</a>
+  </nav>
+  <button class="theme-btn" onclick="toggleTheme()">🌙</button><button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<main class="container">
+  <h1>My Notes</h1>
+  <textarea id="noteInput" placeholder="Type your learning notes..."></textarea>
+  <button class="btn" onclick="addNote()">Save Note</button>
+  <div id="notesList" class="notes-list"></div>
+</main>
+<script src="js/app.js"></script>
+<script src="js/notes.js"></script>
+</body>
+</html>

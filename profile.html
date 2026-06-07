@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Smart Learning Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">🎓 Smart Learning Hub</div>
+  <nav id="navLinks">
+    <a href="index.html">Home</a><a href="learning.html">Learning</a><a href="quiz.html">Quiz</a><a href="notes.html">Notes</a><a href="progress.html">Progress</a><a href="profile.html">Profile</a>
+  </nav>
+  <button class="theme-btn" onclick="toggleTheme()">🌙</button><button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<main class="container profile-card">
+  <h1>Learner Profile</h1>
+  <input id="name" placeholder="Enter your name" />
+  <input id="age" type="number" placeholder="Enter your age" />
+  <select id="level">
+    <option>Kid</option><option>Student</option><option>Adult</option>
+  </select>
+  <button class="btn" onclick="saveProfile()">Save Profile</button>
+  <div id="profileView"></div>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>

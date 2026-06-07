@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning | Smart Learning Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">🎓 Smart Learning Hub</div>
+  <nav id="navLinks">
+    <a href="index.html">Home</a><a href="learning.html">Learning</a><a href="quiz.html">Quiz</a><a href="notes.html">Notes</a><a href="progress.html">Progress</a><a href="profile.html">Profile</a>
+  </nav>
+  <button class="theme-btn" onclick="toggleTheme()">🌙</button><button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<main class="container">
+  <h1>Learning Courses</h1>
+  <input class="search" id="searchCourse" placeholder="Search course..." onkeyup="filterCourses()" />
+  <div class="cards" id="courseList">
+    <div class="card course" data-title="HTML Basics"><h3>🌐 HTML Basics</h3><p>Learn tags, headings, forms, links and structure.</p><button onclick="completeLesson('HTML Basics')">Mark Completed</button></div>
+    <div class="card course" data-title="CSS Design"><h3>🎨 CSS Design</h3><p>Learn colors, layouts, flexbox, grid and responsive design.</p><button onclick="completeLesson('CSS Design')">Mark Completed</button></div>
+    <div class="card course" data-title="JavaScript"><h3>⚡ JavaScript</h3><p>Learn variables, functions, events and localStorage.</p><button onclick="completeLesson('JavaScript')">Mark Completed</button></div>
+    <div class="card course" data-title="General Knowledge"><h3>🌍 General Knowledge</h3><p>Improve basic knowledge for kids, students and adults.</p><button onclick="completeLesson('General Knowledge')">Mark Completed</button></div>
+  </div>
+</main>
+<footer>Keep learning daily 🚀</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
